@@ -115,7 +115,7 @@ export default function Home() {
                 <li>Most human problems stem from issues in communication.</li>
                 <ul className='text-sm list-disc ml-8'>
                   <li>There is always room for new products that iterate and evolve how we communicate, making it better, faster and cheaper to do so.</li>
-                  <li>In the past I've chosen not to speak, because I thought it was better to be quiet than misunderstood. Now I think the opposite.</li>
+                  <li>In the past I have chosen not to speak, because I thought it was better to be quiet than misunderstood. Now I think the opposite.</li>
                   <li>I like to be wrong, when there is a proposal for a better way.</li>
                   <li>If you disagree with anything on this list, reach out and i’ll be happy to have a conversation about it!</li>
                 </ul>
