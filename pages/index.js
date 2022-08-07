@@ -15,7 +15,7 @@ export default function Home() {
         <div className='max-w-4xl'>
           <div className='my-4 flex flex-row items-center'>
           <a href="https://twitter.com/jamesse_">
-            <div className='rounded-full w-12 h-12 justify-center items-center flex ring-2 ring-offset ring-primary'>
+            <div className='rounded-full w-11 h-11 justify-center items-center flex ring-2 ring-offset-0 ring-primary'>
                 <Image
                 src='/images/james-avatar.png'
                 className='w-12 h-12 rounded-full'
@@ -33,7 +33,7 @@ export default function Home() {
               <p className='text-md'>Some things about me:</p>
               <ul className='text-sm list-disc ml-8'>
                 <li>Grew up just outside of Belfast, Northern Ireland</li>
-                <li>Previously trained as an architect, where the last thing I did in architecture was drop out of my masters at Harvard Graduate School of Design (I’ll come back to architecture at some point!).</li>
+                <li>Previously trained as an architect, where the last thing I did in architecture was drop out of my masters at Harvard Graduate School of Design (I’ll come back to architecture at some point).</li>
                 <li>Started <a className="text-blue-500" href='https://trymoot.com'>a company</a> to work on building great technology, hopefully won’t have to start another!</li>
                 <li>Currently split time between London (two thirds of year) and anywhere else that is sunny (for the other third).</li>
                 <li>My idea of fun is vagabonding (meandering travel), skydiving (jumping out of airplanes), and building new things.</li>
