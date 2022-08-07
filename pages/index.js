@@ -121,7 +121,7 @@ export default function Home() {
                 </ul>
               </ul>
           </div>
-          <div className='border-t my-4'/>
+          <div className='border-t border-gray-500 my-4'/>
           <div className='mb-12 mt-8'>
               <p className='text-md'>Things I have an hunch about, but am not yet sure:</p>
               <ul className='text-sm list-disc ml-8'>
