@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main className='flex justify-center bg-gray-50 text-black'>
-        <div className='max-w-4xl'>
+        <div className='max-w-4xl px-4'>
           <div className='my-4 flex flex-row items-center'>
           <a href="https://twitter.com/jamesse_">
             <div className='rounded-full w-11 h-11 justify-center items-center flex ring-2 ring-offset-0 ring-primary'>
@@ -32,7 +32,7 @@ export default function Home() {
           <div className='mb-8'>
               <p className='text-md'>Some things about me:</p>
               <ul className='text-sm list-disc ml-8'>
-                <li>Grew up just outside of Belfast, Northern Ireland</li>
+                <li>Grew up just outside of Belfast, Northern Ireland.</li>
                 <li>Previously trained as an architect, where the last thing I did in architecture was drop out of my masters at Harvard Graduate School of Design (I’ll come back to architecture at some point).</li>
                 <li>Started <a className="text-blue-500" href='https://trymoot.com'>a company</a> to work on building great technology, hopefully won’t have to start another!</li>
                 <li>Currently split time between London (two thirds of year) and anywhere else that is sunny (for the other third).</li>
@@ -45,15 +45,15 @@ export default function Home() {
                 <li>Everything is driven by the force of evolution, the greatest force in the universe.</li>
                 <ul className='text-sm list-disc ml-8'>
                   <li>As human beings (the most consious force of life that we are currently aware), our imperative is to shape the world to our liking, and any consequence of that is an outcome of evolution (not bad).</li>
-                  <li>Evolution communicates through iteration, and iteration leads to innovation (new things). Bad iterations (bad things) can’t be stopped. But neither can good.</li>
+                  <li>Evolution communicates through iteration, and iteration leads to innovation (new things). Bad iterations (bad things) can’t be stopped. But good iterations (good things) overcome bad over time.</li>
                   <li>Innovation (new things) allow us to do more with less, and thus our time is currently best spent in raising the ceiling of human progress, not the floor.</li>
-                  {/* <li>Raising the floor will eventually erase all objective poverty, but never relative poverty.</li> */}
+                  <li>Raising the floor will eventually erase all objective poverty from the world, but never relative poverty. There will always be a heirarchy.</li>
                 </ul>
                 <li>Human experience is not base reality, therefore we can not come to conclusions about truth.</li>
                 <ul className='text-sm list-disc ml-8'>
-                  <li>Humans can only experience 0% of the full electromagnetic spectrum, since the spectrum is infinite, therefore we cannot grasp reality through observation (although we shouldn’t stop trying).</li>
+                  <li>The human experience is only a particular interface that picks up a small portion of reality, therefore we cannot grasp reality through our own observation.</li>
                   <li>The things we believe are often wrong (as proven by history), and we are not even close to asking the right questions.</li>
-                  <li>Our definitions of consiousness are pretty consistent, but consiousness is only one interface for interacting with the universe.</li>
+                  <li>Our definitions of consiousness might tend towards a truth, but consiousness is only one interface for interacting with the universe.</li>
                 </ul>
                 <li>Science and religion are pointing to the same thing, despite seemingly being at odds.</li>
                 <ul className='text-sm list-disc ml-8'>
@@ -76,9 +76,9 @@ export default function Home() {
                   <li>The average lifespan of a building today is 30 years, yet there are more homes in England today which were built before 1900, than any other era.</li>
                   <li>Our goal should be to understand the principles that embodied this period and evolve them through contemporary technology.</li>
                 </ul>
-                <li>One of these principles is in the idea of Design Driven Development, where there is equal spread over the creative, technical and economic facets of the built environment.</li>
+                <li>One of these principles is in the idea of Design Driven Development, where there is equal spread over the creative, technical and economic facets of the built environment. All in one package.</li>
                 <ul className='text-sm list-disc ml-8'>
-                  <li>Another one of these is in open-sourcing architectural patterns, so that no two buildings need to be independently designed.</li>
+                  <li>Another one of these is in open-sourcing architectural patterns, so that no two buildings need to be designed independently.</li>
                 </ul>
                 <li>True sustainability is hollistic & most measures and ideals we have around sustainability are wrong.</li>
                 <ul className='text-sm list-disc ml-8'>
@@ -97,7 +97,7 @@ export default function Home() {
                 <li>China is a massive blind spot in the West, and we’re going to pay for it.</li>
                 <li>The future of work is both remote and asyncronous.</li>
                 <ul className='text-sm list-disc ml-8'>
-                  <li>As covered previously, evolution is the greatest force in the universe, and evolution always tends towards optimisation.</li>
+                  <li>As covered previously, evolution is the greatest force in the universe, and evolution tends towards optimisation.</li>
                   <li>Remote work is a massive optimisation on work in general, both from a time (productivity) perspective as well as an economic and environmental perspective.</li>
                   <li>For it’s downsides, we are in early days and it is only going to 10x in terms of experience (as it has the past 10).</li>
                 </ul>
