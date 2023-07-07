@@ -168,12 +168,19 @@ export default function Home({ projectEntries, postEntries }) {
         </div>
       </Modal>
 
-      <main className="flex flex-col justify-center items-center bg-gray-50 text-gray-800 h-screen">
+      <main className="flex flex-col justify-center items-center bg-gray-50 text-gray-800 min-h-screen lg:px-0 px-4">
         <div className="flex flex-col max-w-5xl justify-start pr-32 pt-32 pb-8 mb-8 w-full">
           <div
-            className="flex h-6 w-6 bg-primary rounded-full cursor-pointer mb-4"
+            className="flex h-6 w-6 bg-primary rounded-full cursor-pointer mb-4 ml-1 ring-2 ring-offset-2 ring-primary"
             onClick={openPhotosModal}
-          />
+          >
+            <Image
+              src="/images/james-avatar.png"
+              className="w-12 h-12 rounded-full"
+              width={40}
+              height={40}
+            />
+          </div>
           <h1 className="text-4xl font-medium mb-2">Hey, I'm James</h1>
           <h2 className="text-3xl text-left w-full">
             A <span className="line-through">designer</span>{" "}
@@ -182,25 +189,61 @@ export default function Home({ projectEntries, postEntries }) {
             My two goals in life are to build and explore the extraordinary.
           </h2>
         </div>
-        <div className="grid grid-cols-3 gap-6 h-full max-w-5xl justify-start pt-8 pb-16 w-full">
+        <div className="grid grid-cols-3 gap-6 h-full max-w-5xl justify-start pt-8 mb-32 w-full">
           <div className="flex flex-col w-full">
-            <h3 className="text-2xl mb-4">Projects</h3>
+            <h3 className="text-xl mb-8 font-medium">Projects</h3>
             {projectEntries &&
               projectEntries.map((project) => (
-                <p>{project.frontmatter.title}</p>
+                <a
+                  key={project.frontmatter.title}
+                  href={project.frontmatter.url}
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <div className="flex flex-col text-sm">
+                    <p className="mb-2 font-medium">
+                      {project.frontmatter.title}
+                    </p>
+                    <p className="mb-6">{project.frontmatter.subtitle}</p>
+                  </div>
+                </a>
               ))}
           </div>
           <div className="flex flex-col">
-            <h3 className="text-2xl mb-4">Experiments</h3>
+            <h3 className="text-xl mb-8 font-medium">Thoughts & experiments</h3>
             {postEntries &&
-              postEntries.map((post) => <p>{post.frontmatter.title}</p>)}
+              postEntries.map((post) => (
+                <a
+                  key={post.frontmatter.title}
+                  href={post.frontmatter.url}
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <div className="flex flex-col text-sm">
+                    <p className="mb-2 font-medium">{post.frontmatter.title}</p>
+                    <p className="mb-6">
+                      {post.frontmatter.subtitle}
+                      <span className="ml-1 opacity-60">
+                        {post.frontmatter.displayDate}
+                      </span>
+                    </p>
+                  </div>
+                </a>
+              ))}
           </div>
           <div className="flex flex-col">
-            <h3 className="text-2xl mb-4">Links</h3>
-            <p>code for links here</p>
+            <h3 className="text-xl mb-4">Links</h3>
+            <div className="w-full bg-gray-200 rounded-md py-2 px-4 text-sm">
+              {" "}
+              <p>code for links here</p>
+            </div>
           </div>
         </div>
-        <FooterNavigation />
+        {!modalIsOpen && (
+          <div className="absolute left-0 top-0 flex h-screen items-center w-32">
+            <FooterNavigation />
+          </div>
+        )}
       </main>
     </div>
   );

@@ -3,16 +3,10 @@
   tag: 'Product'
   publishedAt: '2023-04-24'
   displayDate: '24th April 2023'
-  title: "Making moves — v0.4 Changelog"
-  slug: 'changelog-v0.4'
-  author: 'Moot'
-  authorRole: 'Moot HQ'
-  authorSocial: 'https://twitter.com/moot_hq'
-  authorAvatar: '/images/logo-padding.webp'
-  summary:
-    "It's been a quiet few months of building Moot, where we've been focused on making Moot suitable for larger teams and ironing out all the functionality that we've been meaning to add throughout the past months. Today, we're excited to share some of the latest features we've been working on."
-  heroImage: '/images/blog/changelog-v0.4.webp'
-  heroAlt: 'Image showing the summary of Moot V0.4 - including a new meetings product and existing product improvments.'
+  title: "AIME"
+  subtitle: 'An AI-powered wearable headset'
+  slug: 'aime'
+  url: 'https://aime.space/#?ref=jamesstirratellis.com'
 
 ---
 
