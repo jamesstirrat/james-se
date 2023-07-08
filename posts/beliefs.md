@@ -3,7 +3,7 @@
   tag: 'Writing'
   publishedAt: '2023-04-24'
   title: "Beliefs"
-  subtitle: "Some of my beliefs in 2022. Pls no cancel"
+  subtitle: "Some of my beliefs in 2022. No cancel pls"
   displayDate: 'June 2022'
   slug: 'beliefs'
 
