@@ -12,53 +12,48 @@ import { HiArrowRight } from "react-icons/hi";
 const photos = [
   {
     id: 1,
-    src: "/images/1.jpg",
-    caption: "Via Ferrata in Grindelwald, Switzerland",
+    src: "/images/golden-gate.png",
+    caption: "Cycling across the Golden Gate Bridge, San Francisco, CA",
   },
   {
     id: 2,
-    src: "/images/2.jpg",
-    caption: "Skydiving in Évora, Portugal",
+    src: "/images/algarve.png",
+    caption: "Skydiving across the Algarve, Portugal",
   },
   {
     id: 3,
-    src: "/images/3.jpg",
-    caption: "Cycling in San Francisco, CA",
+    src: "/images/grindelwald.png",
+    caption: "Via Ferrata in Grindelwald, Switzerland",
   },
   {
     id: 4,
-    src: "/images/4.jpg",
-    caption: "Visiting a neon museum in Warsaw, Poland",
+    src: "/images/dolomites.png",
+    caption: "Skiing in the Dolomites, Italy",
   },
   {
     id: 5,
-    src: "/images/5.jpg",
+    src: "/images/lough-erne.png",
     caption: "Watching my best friend get married in Northern Ireland",
   },
   {
     id: 6,
-    src: "/images/6.jpg",
-    caption: "Huskey sledding near Riga, Latvia",
+    src: "/images/snowdonia.png",
+    caption: "Hiking in Snowdonia National Park, Wales",
   },
   {
     id: 7,
-    src: "/images/6.jpg",
+    src: "/images/riga.png",
     caption: "Huskey sledding near Riga, Latvia",
   },
   {
     id: 8,
-    src: "/images/6.jpg",
-    caption: "Huskey sledding near Riga, Latvia",
+    src: "/images/gdansk.png",
+    caption: "Kayaking in Gdansk, Poland",
   },
   {
     id: 9,
-    src: "/images/6.jpg",
-    caption: "Huskey sledding near Riga, Latvia",
-  },
-  {
-    id: 9,
-    src: "/images/6.jpg",
-    caption: "Huskey sledding near Riga, Latvia",
+    src: "/images/barcelona.png",
+    caption: "Exploring my old home, Barcelona, Spain",
   },
 ];
 
@@ -70,14 +65,23 @@ const sortDates = (a, b) => {
 };
 
 export default function Home({ projectEntries, postEntries }) {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [photosModalIsOpen, setPhotosModalIsOpen] = useState(false);
+  const [aboutMeModalIsOpen, setAboutMeModalIsOpen] = useState(false);
 
   const openPhotosModal = () => {
-    setModalIsOpen(true);
+    setPhotosModalIsOpen(true);
   };
 
   const closePhotosModal = () => {
-    setModalIsOpen(false);
+    setPhotosModalIsOpen(false);
+  };
+
+  const openAboutMeModal = () => {
+    setAboutMeModalIsOpen(true);
+  };
+
+  const closeAboutMeModal = () => {
+    setAboutMeModalIsOpen(false);
   };
 
   const photoRefs = useRef(photos.map(() => React.createRef()));
@@ -94,7 +98,7 @@ export default function Home({ projectEntries, postEntries }) {
       </Head>
 
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={photosModalIsOpen}
         onRequestClose={closePhotosModal}
         shouldCloseOnOverlayClick={true}
         style={{
@@ -122,61 +126,285 @@ export default function Home({ projectEntries, postEntries }) {
             backgroundColor: "rgba(255, 255, 255, 0.5)",
           },
         }}
-        contentLabel="Example Modal"
+        contentLabel="What I've been up to"
       >
         <div
           onClick={closePhotosModal}
           className="flex items-center justify-center w-full border-none"
         >
-          <p className="w-full h-full flex items-center justify-center">
-            Some things about me: Grew up just outside of Belfast, Northern
-            Ireland. Previously trained as an architect, where the last thing I
-            did in architecture was drop out of my masters at Harvard Graduate
-            School of Design (I’ll come back to architecture at some point).
-            Started a company to work on building great technology, hopefully
-            won’t have to start another! Currently split time between London
-            (two thirds of year) and anywhere else that is sunny (for the other
-            third). My idea of fun is vagabonding (meandering travel), skydiving
-            (jumping out of airplanes), and building new things.
-          </p>
-          {photos.map((photo, index) => {
-            const total = photos.length;
-            const rotation = (1240 / total) * index;
-            const position = (index / total) * (2 * Math.PI);
-            const left = 35 + 50 * Math.cos(position);
-            const top = 25 + 50 * Math.sin(position);
-
-            const slightRotation = position < Math.PI ? 15 : -15;
-
-            return (
-              <div
-                className="absolute w-80 h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform scale-125"
-                style={{
-                  transform: `rotate(${rotation + slightRotation}deg)`,
-                  top: `${top}%`,
-                  left: `${left}%`,
-                  scale: 1.5,
-                }}
-                key={photo.id}
-              >
-                <div
-                  className="w-full h-full transform relative scale-125"
-                  style={{
-                    transform: `rotate(${-rotation - slightRotation}deg)`,
-                  }}
-                >
-                  <div
-                    className="absolute w-full h-full aspect-square bg-slate-400 items-center flex justify-center text-sm"
-                    style={{
-                      transform: `rotate(${rotation + slightRotation}deg)`,
-                    }}
-                  >
-                    {photo.caption}
-                  </div>
-                </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${20}deg)`,
+              top: "2%",
+              left: "-6%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
+              <Image
+                src={photos[0].src}
+                alt={photos[0].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[0].caption}
               </div>
-            );
-          })}
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${-14}deg)`,
+              top: "50%",
+              left: "-2%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
+              <Image
+                src={photos[1].src}
+                alt={photos[1].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[1].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${8}deg)`,
+              top: "30%",
+              left: "18%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
+              <Image
+                src={photos[2].src}
+                alt={photos[2].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[2].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${-4}deg)`,
+              top: "-6%",
+              left: "34%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
+              <Image
+                src={photos[3].src}
+                alt={photos[3].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[3].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${-4}deg)`,
+              top: "64%",
+              left: "45%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
+              <Image
+                src={photos[4].src}
+                alt={photos[4].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[4].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${20}deg)`,
+              top: "27%",
+              left: "62%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
+              <Image
+                src={photos[5].src}
+                alt={photos[5].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[5].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${-9}deg)`,
+              top: "53%",
+              left: "80%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-xs">
+              <Image
+                src={photos[6].src}
+                alt={photos[6].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[6].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${-17}deg)`,
+              top: "-2%",
+              left: "85%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-xs">
+              <Image
+                src={photos[7].src}
+                alt={photos[7].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[7].caption}
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
+            style={{
+              transform: `rotate(${12}deg)`,
+              top: "-14%",
+              left: "54%",
+            }}
+          >
+            <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-xs">
+              <Image
+                src={photos[8].src}
+                alt={photos[8].caption}
+                width={400}
+                height={400}
+              />
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+                {photos[8].caption}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={aboutMeModalIsOpen}
+        onRequestClose={closeAboutMeModal}
+        shouldCloseOnOverlayClick={true}
+        style={{
+          overlay: {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            backdropFilter: "blur(10px)",
+            margin: "0 auto",
+          },
+          content: {
+            position: "absolute",
+            border: "none",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            overflow: "hidden",
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            alignItems: "center",
+            justifyItems: "center",
+            width: "100%",
+          },
+        }}
+        contentLabel="About Me"
+      >
+        <div
+          onClick={closeAboutMeModal}
+          className="flex items-center justify-center w-full h-full border-none flex-col text-xs md:text-sm lg:text-md"
+        >
+          <div className="max-w-2xl space-y-4">
+            <p className="text-2xl">About</p>
+            <p>
+              I currently live in London & work on{" "}
+              <a
+                href="https://moot.app/#?ref=jamesstirratellis.com"
+                className="text-blue-400"
+              >
+                Moot
+              </a>
+              . I grew up just outside of Belfast, Northern Ireland and studied
+              at Harvard GSD, Imperial College London and the Royal College of
+              Art.
+            </p>
+            <p>
+              I was previously training as an architect, where the last thing I
+              did in architecture was drop out of my masters at Harvard Graduate
+              School of Design (I’ll come back to architecture at some point).
+            </p>
+            <p>
+              Started a company to work on building great technology, hopefully
+              won’t have to start another! That said, some areas of interest:
+            </p>
+            <p className="pl-8">
+              ⦿ Architecture. Specifically building a new model of practicing
+              architecture that re-adjusts incentives towards beauty, high time
+              preference & large scale efficiency.
+            </p>
+            <p className="pl-8">
+              ⦿ Spatial computing. This is the paradigm shift where computing
+              begins to wrap around the human experience, rather than the other
+              way around. It's also where my passion for architecture (space)
+              meets my passion for technology (computing).
+            </p>
+            <p className="pl-8">
+              ⦿ Citizen science, specifically around medical research. I believe
+              the incentives of the medical profession offer great possibility
+              but sometimes cause more harm than good, and non-professionals can
+              drive the field forward.
+            </p>
+            <p className="pl-8">
+              ⦿ Freedom and ideas. Innovation is a child of freedom & ideas are
+              precious. I have only been able to explore the way I have because
+              of the privilege of being free, and being surrounded by people who
+              see the value in ideas. I hope I can help others do the same.
+            </p>
+
+            <p>
+              My idea of fun is vagabonding (meandering travel), skydiving
+              (jumping out of airplanes), and building new things.
+            </p>
+          </div>
         </div>
       </Modal>
 
@@ -194,10 +422,10 @@ export default function Home({ projectEntries, postEntries }) {
                 height={40}
               />
             </div>
-            <div className="flex h-6">
+            <div className="flex">
               <Image
                 src="/images/sig.png"
-                className="h-12 w-20"
+                className="h-20 w-32 bg-blue-200"
                 width={45}
                 height={30}
               />
@@ -274,19 +502,16 @@ export default function Home({ projectEntries, postEntries }) {
               <p className="mr-1">{"What I'm currently working on"}</p>
               <HiArrowRight />
             </a>
-            <a
-              className="font-medium w-fit bg-gray-200 rounded-md py-2 px-4 flex flex-row items-center mb-4"
-              href="https://moot.app/#?ref=jamesstirratellis.com"
-              target="_blank"
-              rel="nofollow noreferrer"
+            <div
+              onClick={openAboutMeModal}
+              className="font-medium w-fit bg-gray-200 rounded-md py-2 px-4 flex flex-row items-center mb-4 cursor-pointer"
             >
-              {" "}
               <p className="mr-1">Learn more about me</p>
               <HiArrowRight />
-            </a>
+            </div>
           </div>
         </div>
-        {!modalIsOpen && (
+        {!aboutMeModalIsOpen && (
           <div className="absolute left-0 top-0 flex h-screen items-center w-32">
             <FooterNavigation />
           </div>
