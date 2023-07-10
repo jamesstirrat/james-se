@@ -390,8 +390,17 @@ export default function Home({ projectEntries, postEntries }) {
       </Modal>
 
       <main className="flex flex-col justify-center items-center bg-gray-50 text-gray-800 min-h-screen lg:px-0 px-6">
-        <div className="flex flex-col max-w-5xl justify-start lg:pr-32 pt-24 lg:pt-32 pb-8 mb-8 w-full">
-          <div className="flex flex-row items-center mb-4">
+        <div className="flex flex-col max-w-5xl justify-start lg:pr-32 pt-16 lg:pt-24 pb-8 mb-8 w-full">
+          <div className="flex flex-col items-start mb-4">
+            <div className="flex mb-3 ml-2">
+              <Image
+                src="/images/see-here.svg"
+                className=""
+                width={170 * 2}
+                height={60 * 2}
+                alt="prompt to click avatar"
+              />
+            </div>
             <div
               className="flex h-6 w-6 bg-primary rounded-full cursor-pointer ml-1 mr-2 ring-2 ring-offset-2 ring-primary"
               onClick={(e) => {
