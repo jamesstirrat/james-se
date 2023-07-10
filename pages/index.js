@@ -14,47 +14,47 @@ import { HiArrowRight } from "react-icons/hi";
 const photos = [
   {
     id: 1,
-    src: "/images/golden-gate.png",
+    src: "/images/golden-gate-min.webp",
     caption: "Cycling across the Golden Gate Bridge, San Francisco, CA",
   },
   {
     id: 2,
-    src: "/images/algarve.png",
+    src: "/images/algarve-min.webp",
     caption: "Skydiving across the Algarve, Portugal",
   },
   {
     id: 3,
-    src: "/images/grindelwald.png",
+    src: "/images/grindelwald-min.webp",
     caption: "Via Ferrata in Grindelwald, Switzerland",
   },
   {
     id: 4,
-    src: "/images/dolomites.png",
+    src: "/images/dolomites-min.webp",
     caption: "Skiing in the Dolomites, Italy",
   },
   {
     id: 5,
-    src: "/images/lough-erne.png",
+    src: "/images/lough-erne-min.webp",
     caption: "Watching my best friend get married in Northern Ireland",
   },
   {
     id: 6,
-    src: "/images/snowdonia.png",
+    src: "/images/snowdonia-min.webp",
     caption: "Hiking in Snowdonia National Park, Wales",
   },
   {
     id: 7,
-    src: "/images/riga.png",
+    src: "/images/riga-min.webp",
     caption: "Huskey sledding near Riga, Latvia",
   },
   {
     id: 8,
-    src: "/images/gdansk.png",
+    src: "/images/gdansk-min.webp",
     caption: "Kayaking in Gdansk, Poland",
   },
   {
     id: 9,
-    src: "/images/barcelona.png",
+    src: "/images/barcelona-min.webp",
     caption: "Exploring my old home, Barcelona, Spain",
   },
 ];
