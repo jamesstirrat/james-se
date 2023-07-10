@@ -394,7 +394,10 @@ export default function Home({ projectEntries, postEntries }) {
           <div className="flex flex-row items-center mb-4">
             <div
               className="flex h-6 w-6 bg-primary rounded-full cursor-pointer ml-1 mr-2 ring-2 ring-offset-2 ring-primary"
-              onClick={openPhotosModal}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent event propagation
+                openPhotosModal();
+              }}
             >
               <Image
                 src="/images/james-avatar.png"
@@ -527,7 +530,7 @@ export default function Home({ projectEntries, postEntries }) {
           </div>
         </div>
         {!aboutMeModalIsOpen && (
-          <div className="absolute left-0 top-0 flex h-screen items-center w-32">
+          <div className="absolute bottom-0 flex h-screen items-center w-32">
             <FooterNavigation />
           </div>
         )}

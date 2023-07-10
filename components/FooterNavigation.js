@@ -38,7 +38,7 @@ export default function Navigation() {
     <>
       <div
         data-theme="light"
-        className="fixed bottom-0 inset-x-0 z-50 mb-2 flex items-center justify-center"
+        className="fixed h-20 bottom-0 inset-x-0 z-50 mb-2 flex items-center justify-center"
       >
         <div className="absolute bottom-4 flex justify-center items-center rounded-full bg-white py-2 px-1 shadow-lg border border-base-300">
           <div className="group relative hover:bg-gray-800 hover:text-white text-gray-600 h-10 w-10 rounded-full flex items-center justify-center mx-1 cursor-pointer">
