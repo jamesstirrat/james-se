@@ -86,8 +86,6 @@ export default function Home({ projectEntries, postEntries }) {
     setAboutMeModalIsOpen(false);
   };
 
-  const photoRefs = useRef(photos.map(() => React.createRef()));
-
   return (
     <div className="">
       <Head>
@@ -147,7 +145,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[0].caption}
               </div>
             </div>
@@ -165,7 +163,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[1].caption}
               </div>
             </div>
@@ -183,7 +181,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[2].caption}
               </div>
             </div>
@@ -201,7 +199,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[3].caption}
               </div>
             </div>
@@ -219,7 +217,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[4].caption}
               </div>
             </div>
@@ -237,7 +235,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[5].caption}
               </div>
             </div>
@@ -255,7 +253,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[6].caption}
               </div>
             </div>
@@ -273,7 +271,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[7].caption}
               </div>
             </div>
@@ -291,7 +289,7 @@ export default function Home({ projectEntries, postEntries }) {
                 width={400}
                 height={400}
               />
-              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs">
+              <div className="absolute z-10 text-center px-8 bg-opacity-60 w-full bottom-8 font-medium text-xs hidden lg:block">
                 {photos[8].caption}
               </div>
             </div>
@@ -366,10 +364,9 @@ export default function Home({ projectEntries, postEntries }) {
               preference & large scale efficiency.
             </p>
             <p className="pl-8">
-              ⦿ Spatial computing. This is the paradigm shift where computing
-              begins to wrap around the human experience, rather than the other
-              way around. It's also where my passion for architecture (space)
-              meets my passion for technology (computing).
+              {
+                "⦿ Spatial computing. This is the paradigm shift where computing begins to wrap around the human experience, rather than the other way around. It's also where my passion for architecture (space) meets my passion for technology (computing)."
+              }
             </p>
             <p className="pl-8">
               ⦿ Citizen science, specifically around medical research. I believe
@@ -418,7 +415,7 @@ export default function Home({ projectEntries, postEntries }) {
             </div> */}
           </div>
           <h1 className="text-4xl font-medium mb-2">
-            Hey, I'm James Stirrat-Ellis
+            {"Hey, I'm James Stirrat-Ellis"}
           </h1>
           <h2 className="text-3xl text-left w-full">
             A <span className="line-through">designer</span>{" "}
@@ -431,21 +428,38 @@ export default function Home({ projectEntries, postEntries }) {
           <div className="flex flex-col w-full">
             <h3 className="text-2xl mb-8 font-medium">Projects</h3>
             {projectEntries &&
-              projectEntries.map((project) => (
-                <a
-                  key={project.frontmatter.title}
-                  href={project.frontmatter.url}
-                  target="_blank"
-                  rel="nofollow noreferrer"
-                >
-                  <div className="flex flex-col">
-                    <p className="mb-2 font-medium">
-                      {project.frontmatter.title}
-                    </p>
-                    <p className="mb-6">{project.frontmatter.subtitle}</p>
+              projectEntries
+                .sort(
+                  (a, b) =>
+                    a.frontmatter.homepageIndex - b.frontmatter.homepageIndex
+                )
+                .map((project) => (
+                  <div
+                    key={project.frontmatter.title}
+                    className={
+                      project.frontmatter.published ? "" : "cursor-wait"
+                    }
+                  >
+                    <a
+                      key={project.frontmatter.title}
+                      href={project.frontmatter.url}
+                      target="_blank"
+                      rel="nofollow noreferrer"
+                      className={
+                        project.frontmatter.published
+                          ? ""
+                          : "pointer-events-none"
+                      }
+                    >
+                      <div className="flex flex-col">
+                        <p className="mb-2 font-medium">
+                          {project.frontmatter.title}
+                        </p>
+                        <p className="mb-6">{project.frontmatter.subtitle}</p>
+                      </div>
+                    </a>
                   </div>
-                </a>
-              ))}
+                ))}
             <p className="font-medium opacity-60 cursor-wait">
               More projects uploaded soon
             </p>
@@ -454,29 +468,38 @@ export default function Home({ projectEntries, postEntries }) {
           <div className="flex flex-col">
             <h3 className="text-2xl mb-8 font-medium">Experiments</h3>
             {postEntries &&
-              postEntries.map((post) => (
-                <Link href={`/posts/${post.frontmatter?.slug}/`} passHref>
-                  <a
-                    className="cursor-pointer"
-                    key={post.frontmatter.title}
-                    href={post.frontmatter.url}
-                    target="_blank"
-                    rel="nofollow noreferrer"
+              postEntries
+                .sort(
+                  (a, b) =>
+                    new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+                )
+                .map((post) => (
+                  <div
+                    key={post.title}
+                    className={
+                      post.frontmatter.published != false ? "" : "cursor-wait"
+                    }
                   >
-                    <div className="flex flex-col">
-                      <p className="mb-2 font-medium">
-                        {post.frontmatter.title}
-                      </p>
-                      <p className="mb-6">
-                        {post.frontmatter.subtitle}
-                        <span className="ml-1 opacity-60">
-                          {post.frontmatter.displayDate}
-                        </span>
-                      </p>
-                    </div>
-                  </a>
-                </Link>
-              ))}
+                    <a
+                      href={`/posts/${post.frontmatter?.slug}/`}
+                      target="_blank"
+                      rel="nofollow noreferrer"
+                      className="pointer-events-none"
+                    >
+                      <div className="flex flex-col">
+                        <p className="mb-2 font-medium">
+                          {post.frontmatter.title}
+                        </p>
+                        <p className="mb-6">
+                          {post.frontmatter.subtitle}
+                          <span className="ml-1 opacity-60">
+                            {post.frontmatter.displayDate}
+                          </span>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                ))}
             <p className="font-medium opacity-60 cursor-wait">
               More experiments coming soon
             </p>

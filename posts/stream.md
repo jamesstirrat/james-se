@@ -1,5 +1,6 @@
 ---
-  published: true
+  published: false
+  homepageIndex: 4
   tag: 'Writing'
   publishedAt: '2023-04-24'
   title: "Stream of Consiousness"

@@ -17,7 +17,7 @@ export default function PostTemplate(props) {
   return (
     <>
       <Head>
-        <title>{meta.title} - James SE</title>
+        <title>{meta.title} - James Stirrat-Ellis</title>
         <meta name="robots" content="follow, index" />
         <meta
           property="og:url"
@@ -40,12 +40,12 @@ export default function PostTemplate(props) {
         openGraph={{
           type: "website",
           locale: "en_US",
-          url: `https://www.moot.app/images/blog/${props.frontmatter?.slug}.webp`,
+          url: `https://jamesstirratellis.com/posts/${props.frontmatter?.slug}.webp`,
           title: props.frontmatter.title,
           description: props.frontmatter.summary,
           images: [
             {
-              url: `https://www.moot.app/images/blog/${props.frontmatter?.slug}.webp`,
+              url: `https://jamesstirratellis.com/posts/${props.frontmatter?.slug}.webp`,
               alt: props.frontmatter.title,
               width: 1280,
               height: 720,
