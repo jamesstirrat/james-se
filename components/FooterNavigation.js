@@ -30,7 +30,8 @@ export default function Navigation() {
   }, []);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("james");
+    navigator.clipboard.writeText("james@moot.app");
+    setShowPopup(false);
   };
 
   return (
@@ -89,9 +90,14 @@ export default function Navigation() {
                 className="absolute top-0 left-0 w-full h-full flex flex-row items-center justify-center bg-opacity-50 transform -translate-y-14 "
               >
                 <div className="bg-white p-2 flex flex-row rounded-lg shadow">
-                  <button className="mr-2 px-2 py-1 bg-gray-800 text-white rounded text-sm whitespace-nowrap">
-                    Email
-                  </button>
+                  <a
+                    href="mailto:james@moot.app"
+                    onClick={() => setShowPopup(false)}
+                  >
+                    <button className="mr-2 px-2 py-1 bg-gray-800 text-white rounded text-sm whitespace-nowrap hover:shadow">
+                      Email
+                    </button>
+                  </a>
                   <button
                     onClick={() => copyEmail()}
                     className="bg-gray-800 px-2 py-1 text-white rounded text-sm whitespace-nowrap"

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import Modal from "react-modal";
 import matter from "gray-matter";
 import { readdirSync } from "fs";
+import { motion } from "framer-motion";
 
 import FooterNavigation from "../components/FooterNavigation";
 import { HiArrowRight } from "react-icons/hi";
@@ -132,13 +134,11 @@ export default function Home({ projectEntries, postEntries }) {
           onClick={closePhotosModal}
           className="flex items-center justify-center w-full border-none"
         >
-          <div
+          <motion.div
+            initial={{ opacity: 0, top: "-50%", left: "-50%", rotate: 20 }}
+            animate={{ opacity: 1, top: "2%", left: "-4%", rotate: 20 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${20}deg)`,
-              top: "2%",
-              left: "-6%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
               <Image
@@ -151,14 +151,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[0].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "100%", left: "-50%", rotate: -14 }}
+            animate={{ opacity: 1, top: "50%", left: "-2%", rotate: -14 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${-14}deg)`,
-              top: "50%",
-              left: "-2%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
               <Image
@@ -171,14 +169,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[1].caption}
               </div>
             </div>
-          </div>
-          <div
-            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${8}deg)`,
-              top: "30%",
-              left: "18%",
-            }}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "50%", left: "-25%", rotate: 8 }}
+            animate={{ opacity: 1, top: "30%", left: "18%", rotate: 8 }}
+            transition={{ duration: 0.5 }}
+            className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-slide-in-from-left"
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
               <Image
@@ -191,14 +187,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[2].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "-50%", left: "26%", rotate: -4 }}
+            animate={{ opacity: 1, top: "-6%", left: "34%", rotate: -4 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${-4}deg)`,
-              top: "-6%",
-              left: "34%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
               <Image
@@ -211,14 +205,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[3].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "100%", left: "49%", rotate: -6 }}
+            animate={{ opacity: 1, top: "64%", left: "45%", rotate: -6 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${-4}deg)`,
-              top: "64%",
-              left: "45%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
               <Image
@@ -231,14 +223,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[4].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "-50%", left: "70%", rotate: 20 }}
+            animate={{ opacity: 1, top: "27%", left: "62%", rotate: 20 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${20}deg)`,
-              top: "27%",
-              left: "62%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-sm">
               <Image
@@ -251,14 +241,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[5].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "100%", left: "100%", rotate: -9 }}
+            animate={{ opacity: 1, top: "53%", left: "80%", rotate: -9 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${-9}deg)`,
-              top: "53%",
-              left: "80%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-xs">
               <Image
@@ -271,14 +259,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[6].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "-50%", left: "95%", rotate: -17 }}
+            animate={{ opacity: 1, top: "-2%", left: "85%", rotate: -17 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${-17}deg)`,
-              top: "-2%",
-              left: "85%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-xs">
               <Image
@@ -291,14 +277,12 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[7].caption}
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, top: "-50%", left: "60%", rotate: 12 }}
+            animate={{ opacity: 1, top: "-14%", left: "54%", rotate: 12 }}
+            transition={{ duration: 0.5 }}
             className="absolute w-56 h-64 lg:w-80 lg:h-96 bg-white rounded shadow-md px-4 pt-4 pb-12 transform animate-enter"
-            style={{
-              transform: `rotate(${12}deg)`,
-              top: "-14%",
-              left: "54%",
-            }}
           >
             <div className="group w-full aspect-1 bg-gray-600 items-center flex justify-center text-xs">
               <Image
@@ -311,7 +295,7 @@ export default function Home({ projectEntries, postEntries }) {
                 {photos[8].caption}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Modal>
 
@@ -420,18 +404,22 @@ export default function Home({ projectEntries, postEntries }) {
                 className="w-12 h-12 rounded-full"
                 width={40}
                 height={40}
+                alt="James SE Avatar"
               />
             </div>
-            <div className="flex">
+            {/* <div className="flex ml-1">
               <Image
-                src="/images/sig.png"
-                className="h-20 w-32 bg-blue-200"
-                width={45}
-                height={30}
+                src="/sig.png"
+                className="h-24 w-40"
+                width={54}
+                height={36}
+                alt="James SE Signature"
               />
-            </div>
+            </div> */}
           </div>
-          <h1 className="text-4xl font-medium mb-2">Hey, I'm James</h1>
+          <h1 className="text-4xl font-medium mb-2">
+            Hey, I'm James Stirrat-Ellis
+          </h1>
           <h2 className="text-3xl text-left w-full">
             A <span className="line-through">designer</span>{" "}
             <span className="line-through">engineer</span> founder living in
@@ -467,23 +455,27 @@ export default function Home({ projectEntries, postEntries }) {
             <h3 className="text-2xl mb-8 font-medium">Experiments</h3>
             {postEntries &&
               postEntries.map((post) => (
-                <a
-                  className="cursor-pointer"
-                  key={post.frontmatter.title}
-                  href={post.frontmatter.url}
-                  target="_blank"
-                  rel="nofollow noreferrer"
-                >
-                  <div className="flex flex-col">
-                    <p className="mb-2 font-medium">{post.frontmatter.title}</p>
-                    <p className="mb-6">
-                      {post.frontmatter.subtitle}
-                      <span className="ml-1 opacity-60">
-                        {post.frontmatter.displayDate}
-                      </span>
-                    </p>
-                  </div>
-                </a>
+                <Link href={`/posts/${post.frontmatter?.slug}/`} passHref>
+                  <a
+                    className="cursor-pointer"
+                    key={post.frontmatter.title}
+                    href={post.frontmatter.url}
+                    target="_blank"
+                    rel="nofollow noreferrer"
+                  >
+                    <div className="flex flex-col">
+                      <p className="mb-2 font-medium">
+                        {post.frontmatter.title}
+                      </p>
+                      <p className="mb-6">
+                        {post.frontmatter.subtitle}
+                        <span className="ml-1 opacity-60">
+                          {post.frontmatter.displayDate}
+                        </span>
+                      </p>
+                    </div>
+                  </a>
+                </Link>
               ))}
             <p className="font-medium opacity-60 cursor-wait">
               More experiments coming soon
@@ -494,7 +486,7 @@ export default function Home({ projectEntries, postEntries }) {
             <h3 className="text-2xl mb-8 font-medium">Links</h3>
             <a
               className="font-medium w-fit bg-gray-200 rounded-md py-2 px-4 flex flex-row items-center mb-4"
-              href="https://moot.app"
+              href="https://moot.app/#?=jamesstirratellis.com"
               target="_blank"
               rel="nofollow noreferrer"
             >
