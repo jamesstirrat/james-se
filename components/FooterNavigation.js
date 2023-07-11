@@ -44,7 +44,7 @@ export default function Navigation() {
           <div className="group relative hover:bg-gray-800 hover:text-white text-gray-600 h-10 w-10 rounded-full flex items-center justify-center mx-1 cursor-pointer">
             <a href="#">
               <label
-                htmlFor="moot-home"
+                htmlFor="james-se-home"
                 className="aspect-1 items-center rounded-full border-none bg-gray-200 text-xl text-base-content hover:bg-blue-200 cursor-pointer"
               >
                 <HiOutlineHome />
@@ -57,7 +57,7 @@ export default function Navigation() {
           <div className="group relative hover:bg-gray-800 hover:text-white text-gray-600 h-10 w-10 rounded-full flex items-center justify-center mx-1 cursor-pointer cursor-wait">
             <div>
               <label
-                htmlFor="moot-home"
+                htmlFor="james-se-work-with-me"
                 className="aspect-1 items-center rounded-full border-none bg-gray-200 text-xl text-base-content hover:bg-blue-200 cursor-wait"
               >
                 <HiOutlineSparkles />
@@ -77,7 +77,7 @@ export default function Navigation() {
             >
               <div className="">
                 <label
-                  htmlFor="moot-home"
+                  htmlFor="james-se-contact"
                   className="aspect-1 items-center rounded-full border-none text-xl text-base-content cursor-pointer"
                 >
                   <HiOutlinePaperAirplane />
@@ -121,7 +121,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
             >
               <label
-                htmlFor="moot-home"
+                htmlFor="james-se-twitter"
                 className="aspect-1 items-center rounded-full border-none text-xl text-base-content cursor-pointer"
               >
                 <TbBrandTwitter />
@@ -138,7 +138,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
             >
               <label
-                htmlFor="moot-home"
+                htmlFor="james-se-instagram"
                 className="aspect-1 items-center rounded-full border-nonetext-xl text-base-content cursor-pointer"
               >
                 <TbBrandInstagram size={24} />
@@ -155,7 +155,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
             >
               <label
-                htmlFor="moot-home"
+                htmlFor="james-se-linkedin"
                 className="aspect-1 items-center rounded-full border-none text-xl text-base-content cursor-pointer"
               >
                 <TbBrandLinkedin size={24} />

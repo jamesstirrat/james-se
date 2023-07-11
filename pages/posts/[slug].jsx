@@ -28,13 +28,13 @@ export default function PostTemplate(props) {
           href={`https://jamesstirratellis.com/posts/${props.frontmatter?.slug}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Moot" />
+        <meta property="og:site_name" content="James Stirrat-Ellis" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <NextSeo
-        title={`${props.frontmatter.title} - James SE`}
+        title={`${props.frontmatter.title} - James Stirrat-Ellis`}
         description={props.frontmatter.summary}
         canonical={`https://jamesstirratellis.com/posts/${props.frontmatter?.slug}`}
         openGraph={{

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 
+import { NextSeo } from "next-seo";
 import Modal from "react-modal";
 import matter from "gray-matter";
 import { readdirSync } from "fs";
@@ -96,6 +96,34 @@ export default function Home({ projectEntries, postEntries }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <NextSeo
+        title={`James Stirrat-Ellis`}
+        description={props.frontmatter.summary}
+        canonical={`https://jamesstirratellis.com/`}
+        openGraph={{
+          type: "website",
+          locale: "en_US",
+          url: `https://www.jamesstirratellis.com/images/james-se-open-graph.png`,
+          title: "James Stirrat-Ellis",
+          description:
+            "A founder living in London, UK. My two goals in life are to build and explore the extraordinary.",
+          images: [
+            {
+              url: `https://www.jamesstirratellis.com/images/james-se-open-graph.png`,
+              alt: props.frontmatter.title,
+              width: 1280,
+              height: 720,
+            },
+          ],
+          site_name: "James Stirrat-Ellis",
+        }}
+        twitter={{
+          handle: "@jamesse_",
+          site: "@jamesse_",
+          cardType: "summary_large_image",
+        }}
+      />
 
       <Modal
         isOpen={photosModalIsOpen}

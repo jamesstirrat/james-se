@@ -28,7 +28,7 @@ export default function ProjectTemplate(props) {
           href={`https://jamesstirratellis.com/projects/${props.frontmatter?.slug}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Moot" />
+        <meta property="og:site_name" content="James Stirrat-Ellis" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <link rel="shortcut icon" href="/favicon.ico" />
@@ -51,11 +51,11 @@ export default function ProjectTemplate(props) {
               height: 720,
             },
           ],
-          site_name: "Moot",
+          site_name: "James Stirrat-Ellis",
         }}
         twitter={{
-          handle: "@moot_hq",
-          site: "@moot_hq",
+          handle: "@jamesse_",
+          site: "@jamesse_",
           cardType: "summary_large_image",
         }}
       />
