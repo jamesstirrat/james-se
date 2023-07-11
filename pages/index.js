@@ -89,10 +89,10 @@ export default function Home({ projectEntries, postEntries }) {
   return (
     <div className="">
       <Head>
-        <title>James SE</title>
+        <title>James Stirrat-Ellis</title>
         <meta
           name="description"
-          content="The landing page of James Stirrat-Ellis"
+          content="A founder living in London, UK. My two goals in life are to build and explore the extraordinary."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -311,7 +311,7 @@ export default function Home({ projectEntries, postEntries }) {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
             backdropFilter: "blur(10px)",
             margin: "0 auto",
           },
@@ -322,8 +322,8 @@ export default function Home({ projectEntries, postEntries }) {
             left: 0,
             right: 0,
             bottom: 0,
-            overflow: "hidden",
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            overflow: "auto",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
             alignItems: "center",
             justifyItems: "center",
             width: "100%",
