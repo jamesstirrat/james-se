@@ -40,12 +40,12 @@ export default function PostTemplate(props) {
         openGraph={{
           type: "website",
           locale: "en_US",
-          url: `https://jamesstirratellis.com/posts/${props.frontmatter?.slug}.webp`,
+          url: `https://www.jamesstirratellis.com/images/james-se-open-graph.png`,
           title: props.frontmatter.title,
           description: props.frontmatter.summary,
           images: [
             {
-              url: `https://jamesstirratellis.com/posts/${props.frontmatter?.slug}.webp`,
+              url: `https://www.jamesstirratellis.com/images/james-se-open-graph.png`,
               alt: props.frontmatter.title,
               width: 1280,
               height: 720,
